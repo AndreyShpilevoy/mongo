@@ -5,3 +5,9 @@ mongoose.connection.openUri('mongodb://localhost/users_test')
     .on('error', (error) => {
         console.warn('Warning', error);
     });
+
+beforeEach((done) => {
+    mongoose.connection.collections.users.drop(() => {
+        done();
+    });
+});

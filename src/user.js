@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const PostSchema = require('./post');
+const BlogPostSchema = require('./blogPost');
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
@@ -12,7 +13,11 @@ const UserSchema = new Schema({
         required: [true, 'Name is required.']
     },
     posts: [PostSchema],
-    likes: Number
+    likes: Number,
+    blogPosts: [{
+        type: Schema.Types.ObjectId,
+        ref: 'blogPost'
+    }]
 }, {
     usePushEach: true
 });

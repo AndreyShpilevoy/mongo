@@ -11,9 +11,15 @@ const UserSchema = new Schema({
         },
         required: [true, 'Name is required.']
     },
-    postCount: Number,
-    posts: [PostSchema]
-}, {usePushEach: true});
+    posts: [PostSchema],
+    likes: Number
+}, {
+    usePushEach: true
+});
+
+UserSchema.virtual('postCount').get(function() {
+    return this.posts ? this.posts.length : 0;
+});
 
 const User = mongoose.model('user', UserSchema);
 

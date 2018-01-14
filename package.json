@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon --exec \"mocha -R min\""
+    "test": "nodemon --exec \"mocha -R min\"",
+    "mongo": "\"C:\\Program Files\\MongoDB\\Server\\3.6\\bin\\mongod.exe\""
   },
   "author": "",
   "license": "ISC",

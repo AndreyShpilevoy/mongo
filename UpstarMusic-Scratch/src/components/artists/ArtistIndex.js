@@ -37,6 +37,8 @@ class ArtistIndex extends Component {
           <p>
             <b>{artist.age}</b> years old
             <br />
+            <b>{artist.yearsActive}</b> years active
+            <br />
             {artist.albums ? artist.albums.length : 0} albums released
           </p>
         </div>

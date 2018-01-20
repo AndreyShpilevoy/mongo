@@ -40,7 +40,7 @@ describe('Reading users out of the database', () => {
         User.find({})
             .sort({name: 1})
             .skip(1)
-            .limit(2).sort()
+            .limit(2)
             .then((users) => {
                 assert(users.length === 2);
                 assert(users[0].name === 'Joe');
